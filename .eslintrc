@@ -182,7 +182,7 @@
     "no-trailing-spaces": 2,
     "no-underscore-dangle": 0,
     "no-wrap-func": 2,
-    "one-var": 1,
+    "one-var": 0,
     "operator-assignment": [
       2,
       "always"
@@ -240,7 +240,7 @@
     ],
     "wrap-regex": 0,
 
-    "react/display-name": 1,
+    "react/display-name": 0,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
     "react/no-did-mount-set-state": 1,
