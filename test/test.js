@@ -1,13 +1,11 @@
-'use strict'
-
 var test = require('tape')
-  , flux-play = require('../')
+  , fluxPlay = require('../')
 
-test('flux-play#get', function getTest(t){
+test('flux-play#get', function getTest (t){
   t.plan(2)
 
   t.doesNotThrow(
-    flux-play.get
+    fluxPlay.get
     , 'does not throw'
   )
 
