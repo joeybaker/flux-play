@@ -1,0 +1,68 @@
+:root {
+  --color-grey10: rgb(240,240,240);
+  --color-danger: rgb(200, 20, 20);
+  --color-success: rgb(20, 150, 60);
+
+  --padding-small: 0.5rem;
+  --padding-normal: 1rem;
+}
+
+body {
+  font-family: helvetica;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--padding-normal);
+}
+
+.inputGroup > strong {
+  flex: 0 0 auto;
+  min-width: 5em;
+  max-width: 50%;
+}
+
+.inputGroup > input
+, .inputGroup > select {
+  flex: 1 1 auto;
+  margin-left: var(--padding-normal);
+  padding: var(--padding-small);
+  font-size: 1em;
+  min-width: 5em;
+}
+
+.inputGroup > .inputGroup {
+  margin-bottom: 0;
+  margin-left: var(--padding-normal);
+}
+
+.inputGroup-error {
+  color: var(--color-danger);
+}
+
+
+
+.profileEdit header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey10);
+  margin-bottom: var(--padding-normal);
+}
+
+.profileEdit-updates {
+  list-style: none;
+  padding: var(--padding-normal);
+  color: white;
+  background: var(--color-success);
+  font-weight: 200;
+}
+
+.profileEdit-updates:empty {
+  display: none;
+}

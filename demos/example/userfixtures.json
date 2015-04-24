@@ -1,0 +1,21 @@
+[
+  {
+    "id": "user:1", "companyId": "company:1", "authorizationId": "auth:1", "email": "rmartin@bmarina.com", "name": {
+      "first": "Ricky", "last": "Martin"
+    }, "phone": "1112223333", "preferredSuppliers": [
+      "user:2"
+    ], "scopes": [
+      "contractor-settings", "contractor-onsite", "contractor-catalog"
+    ], "isVerified": true, "notifications": {
+      "email": true, "sms": true
+    }
+  }, {
+    "id": "user:2", "companyId": "company:2", "authorizationId": "auth:1", "email": "smith@telegraph.com", "name": {
+      "first": "Mr.", "last": "Smith"
+    }, "phone": "5554441111", "scopes": [
+      "supplier-settings", "supplier-orders", "supplier-requests"
+    ], "isVerified": true, "notifications": {
+      "email": true, "sms": true
+    }
+  }
+]
