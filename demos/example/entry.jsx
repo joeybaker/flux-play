@@ -1,6 +1,7 @@
 import React from 'react'
 import App from '../index.jsx'
-import { flux } from './data.js'
+import {flux} from './data.js'
+import Router from 'react-router'
 
 // expose React for debugging
 window.React = React
@@ -11,4 +12,6 @@ window.React = React
 // console.log(flux.state.cursor(['users', 'user:1']).get('email'))
 // console.log(flux.getStore('users').get('user:1'))
 
-React.render(<App flux={flux} />, document.getElementById('app'))
+Router.run(App, Router.HistoryLocation, function routerRunning (Handler) {
+  React.render(<Handler flux={flux} />, document.getElementById('app'))
+})
