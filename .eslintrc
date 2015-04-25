@@ -182,7 +182,7 @@
     "no-trailing-spaces": 2,
     "no-underscore-dangle": 0,
     "no-wrap-func": 2,
-    "one-var": 0,
+    "one-var": [1, {"var": "always", "let": "never", "const": "never"}],
     "operator-assignment": [
       2,
       "always"
