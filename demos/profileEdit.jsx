@@ -41,8 +41,8 @@ export default class ProfileEdit extends React.Component {
   onSubmit (e) {
     e.preventDefault()
     if (!isEmpty(this.state.errors)) return
-    this.props.onSubmit(this.getData())
     this.setState({disableSubmit: true})
+    this.props.onSubmit(this.getData())
   }
 
   getValidityMessage (node) {
@@ -104,10 +104,16 @@ export default class ProfileEdit extends React.Component {
     let updates
 
     if (!isEmpty(this.state.updates)) {
-      updates = <ul className={updatesClassName}>{map(this.state.updates, (value, attr) => <li key={attr}>Updated <strong>{attr}</strong> to <strong>{value}</strong></li>)}</ul>
+      updates = (
+        <ul className={updatesClassName}>{
+          map(this.state.updates, (value, attr) =>
+            <li key={attr}>Updated <strong>{attr}</strong> to <strong>{value}</strong></li>
+          )
+        }</ul>
+      )
     }
 
-    console.log('re-render')
+    console.info(`${name} re-render`)
 
     return (
       <div className={name}>

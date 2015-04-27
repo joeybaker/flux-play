@@ -19,7 +19,11 @@ export default class ProfileEditWrap extends React.Component {
         flux={this.props.flux}
         render={
           (storeState) =>
-            <ProfileEdit user={storeState.user} onSubmit={this.onSubmit.bind(this)} />
+            <ProfileEdit
+              user={storeState.user}
+              formState={storeState.formState}
+              onSubmit={this.onSubmit.bind(this)}
+            />
         }
       />
     )

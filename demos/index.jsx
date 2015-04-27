@@ -29,7 +29,10 @@ App.propTypes = {
 
 class Demo extends React.Component {
   render () {
-    return <img src="http://randomimage.setgetgo.com/get.php" />
+    return (<div>
+      <h1>random image!!</h1>
+      <img src="http://lorempixel.com/800/400" />
+    </div>)
   }
 }
 

@@ -1,5 +1,5 @@
 import { Actions, Store, Flummox } from 'flummox'
-import { Immstruct } from 'immstruct'
+import immstruct from 'immstruct'
 import Immutable from 'immutable'
 
 export class UserActions extends Actions {
@@ -29,7 +29,7 @@ export class UserStore extends Store {
   }
 
   setEmail (content) {
-    this.state.cursor([content.id, 'email']).update(() => content.email)
+    this.state.cursor([content.id]).set('email', content.email)
   }
 
   setPhone (content) {
@@ -46,14 +46,14 @@ export class UserStore extends Store {
       this.state.cursor([id.id]).update((current) => current.mergeDeep(id))
     }
   }
+
 }
 
 export class Flux extends Flummox {
   constructor (initialData) {
     super()
 
-    this.immstruct = new Immstruct()
-    this.state = this.immstruct.get('stores', initialData)
+    this.state = immstruct.withHistory('stores', initialData)
     this.createActions('users', UserActions)
     this.createStore('users', UserStore, this)
   }
