@@ -64,6 +64,7 @@
     "tape": "^3.5.0"
   },
   "dependencies": {
+    "eslint": "^0.20.0",
     "flat": "^1.5.1",
     "flummox": "^4.0.0-alpha",
     "immstruct": "^1.4.0",
