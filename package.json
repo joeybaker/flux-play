@@ -15,10 +15,11 @@
   ],
   "scripts": {
     "start": "babel-node index.js",
-    "test-browser": "browserify -t coverify -t test/test.js | tap-closer | smokestack -b chrome | tap-spec",
-    "test-server": "covert test/*.js | tap-spec",
+    "test-browser": "browserify -t coverify -t demos/*-test.js | tap-closer | smokestack -b chrome | tap-spec",
+    "test-server": "./node_modules/.bin/babel-node ./node_modules/.bin/tapes demos/*-test.jsx | tap-spec",
     "test": "npm run test-server && npm run test-browser",
-    "tdd-server": "nodemon -x npm -i node_modules/ -- run test-server",
+    "tdd-server": "nodemon -x npm -i node_modules/ -e js,jsx,json -- run test-server",
+    "tdd-browser": "smokestack-watch demos/*test.jsx -t babelify -r tap-spec",
     "note1": "we can't have nice things. prepublish also runs on npm install https://github.com/npm/npm/issues/6394 in-publish hacks around this",
     "prepublish": "in-publish && source ./scripts.sh && npm prune && npm run gitPush || in-install",
     "note2": "eslint will always pull from the global eslintrc file, disable that so that we're only looking at the local",
@@ -59,12 +60,12 @@
     "nsp": "^0.4.2",
     "sinon": "^1.12.2",
     "smokestack": "^3.2.0",
+    "smokestack-watch": "^0.4.0",
     "tap-closer": "^1.0.0",
     "tap-spec": "^2.2.0",
-    "tape": "^3.5.0"
+    "tape": "^4.0.0"
   },
   "dependencies": {
-    "eslint": "^0.20.0",
     "flat": "^1.5.1",
     "flummox": "^4.0.0-alpha",
     "immstruct": "^1.4.0",
