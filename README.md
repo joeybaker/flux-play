@@ -16,36 +16,31 @@ The best module ever.
 ## Install
 
 ```sh
-npm i -S flux-play
+git clone https://github.com/joeybaker/flux-play
+cd flux-play
+npm i
 ```
 
 
 ## Usage
 
-```js
-var fluxPlay = require('flux-play')
+Use ribcage-preview to demo these. There are also handy npm scripts
 
-fluxPlay('Rainbow')
+```sh
+# run the big demo
+npm run demos
+# run the in-progress project
+npm run erbody
 ```
-
-## Methods
-### get `(<String> string)`
-Returns the string passed to it.
-
-## Events
-### myEvent `(<String> myString)`
-Emitted when x happens. Passes `myString` which is a y.
 
 ## Tests
 Tests are in [tape](https://github.com/substack/tape) and code coverage is run though [covert](https://github.com/substack/covert).
 
 * `npm test` will run both server and browser tests
-* `npm run test-browser` and `npm run test-server` run their respective tests
-* `npm run tdd-server` will run the server tests on every file change.
+* `npm run test-browser` run their respective tests
+* `npm run tdd-browser` will run the server tests on every file change.
 
 ## Developing
-To publish, run `npm run release -- [{patch,minor,major}]`
-
 _NOTE: you might need to `sudo ln -s /usr/local/bin/node /usr/bin/node` to ensure node is in your path for the git hooks to work_
 
 ### Requirements
