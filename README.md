@@ -1,6 +1,10 @@
 # flux-play
 
-The best module ever.
+Uses [immutable.js](https://facebook.github.io/immutable-js/docs/) with [immstruct](https://github.com/omniscientjs/immstruct/) for data.
+
+[flummox](https://acdlite.github.io/flummox) is the flux implementation.
+
+And of course, [react-router](https://github.com/rackt/react-router).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
