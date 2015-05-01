@@ -1,11 +1,18 @@
 import React from 'react'
-import { PropTypes } from 'react'
+import {PropTypes} from 'react'
 import FluxComponent from 'flummox/component'
 import ProfileEdit from './profileEdit.jsx'
 
 export default class ProfileEditWrap extends React.Component {
   onSubmit (data) {
     this.props.flux.getActions('users').set(data)
+  }
+
+  renderChild (storeState) {
+    return (<ProfileEdit
+      user={storeState.user}
+      onSubmit={this.onSubmit.bind(this)}
+    />)
   }
 
   render () {
@@ -17,14 +24,7 @@ export default class ProfileEditWrap extends React.Component {
           })
         }}
         flux={this.props.flux}
-        render={
-          (storeState) =>
-            <ProfileEdit
-              user={storeState.user}
-              formState={storeState.formState}
-              onSubmit={this.onSubmit.bind(this)}
-            />
-        }
+        render={ this.renderChild.bind(this) }
       />
     )
   }
