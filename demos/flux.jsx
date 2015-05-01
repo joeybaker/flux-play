@@ -4,6 +4,7 @@ import Immutable from 'immutable'
 
 export class UserActions extends Actions {
   setEmail (content) {
+    if (!content.email.includes('@')) throw new Error('must have valid email')
     return content // automatically dispatched
   }
   setPhone (content) {
